@@ -79,6 +79,14 @@ class StorytellingCircle:  # Unrelated class with the expected methods.
     def describe(self):
         return "Storytelling circle: zero MB, unlimited plot twists."
 
+# Return option that fit the data budget without playing or changing them.
+
+def available(options, megabytes):
+    return [
+        option for option in options
+        if option.data_cost() <= megabytes
+    ]
+
 
 # ACT 4: MovieNight HAS-A bundle; it is not a kind of bundle.
 class MovieNight:
